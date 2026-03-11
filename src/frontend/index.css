@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/Fraunces.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/assets/fonts/GeneralSans.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Warm cream / off-white */
+    --background: 0.975 0.008 85;
+    --foreground: 0.16 0.025 265;
+
+    --card: 0.99 0.004 85;
+    --card-foreground: 0.16 0.025 265;
+
+    --popover: 0.99 0.004 85;
+    --popover-foreground: 0.16 0.025 265;
+
+    /* Emerald green primary */
+    --primary: 0.52 0.18 162;
+    --primary-foreground: 0.99 0.004 85;
+
+    --secondary: 0.94 0.012 85;
+    --secondary-foreground: 0.22 0.025 265;
+
+    --muted: 0.93 0.01 90;
+    --muted-foreground: 0.52 0.02 265;
+
+    --accent: 0.90 0.06 90;
+    --accent-foreground: 0.22 0.025 265;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.015 85;
+    --input: 0.88 0.015 85;
+    --ring: 0.52 0.18 162;
+
+    --sidebar: 0.96 0.01 88;
+    --sidebar-foreground: 0.16 0.025 265;
+    --sidebar-primary: 0.52 0.18 162;
+    --sidebar-primary-foreground: 0.99 0.004 85;
+    --sidebar-accent: 0.90 0.04 90;
+    --sidebar-accent-foreground: 0.22 0.025 265;
+    --sidebar-border: 0.87 0.015 88;
+    --sidebar-ring: 0.52 0.18 162;
+
+    --chart-1: 0.52 0.18 162;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.646 0.222 41.116;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.769 0.188 70.08;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Prose / markdown styles */
+  .docs-content {
+    @apply text-foreground leading-relaxed;
+  }
+
+  .docs-content h1 {
+    font-family: 'Fraunces', serif;
+    @apply text-4xl font-bold tracking-tight mb-6 mt-10;
+    color: oklch(var(--foreground));
+    font-variation-settings: 'WONK' 0;
+  }
+
+  .docs-content h2 {
+    font-family: 'Fraunces', serif;
+    @apply text-2xl font-semibold mt-10 mb-4 border-b pb-2;
+    color: oklch(var(--foreground));
+  }
+
+  .docs-content h3 {
+    @apply text-xl font-semibold mt-8 mb-3;
+    color: oklch(var(--foreground));
+  }
+
+  .docs-content p {
+    @apply mb-5 text-base leading-7;
+  }
+
+  .docs-content ul {
+    @apply list-disc pl-6 mb-5 space-y-2;
+  }
+
+  .docs-content ol {
+    @apply list-decimal pl-6 mb-5 space-y-2;
+  }
+
+  .docs-content li {
+    @apply text-base leading-7;
+  }
+
+  .docs-content code {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-sm bg-accent text-accent-foreground px-1.5 py-0.5 rounded;
+  }
+
+  .docs-content pre {
+    font-family: 'JetBrains Mono', monospace;
+    @apply bg-foreground text-background rounded-lg p-5 mb-5 overflow-x-auto text-sm leading-6;
+  }
+
+  .docs-content pre code {
+    @apply bg-transparent p-0 text-background;
+  }
+
+  .docs-content blockquote {
+    @apply border-l-4 border-primary pl-4 italic my-5 text-muted-foreground;
+  }
+
+  .docs-content a {
+    @apply text-primary underline underline-offset-2 hover:opacity-80 transition-opacity;
+  }
+
+  .docs-content table {
+    @apply w-full border-collapse mb-5;
+  }
+
+  .docs-content th {
+    @apply text-left border border-border px-3 py-2 bg-muted font-semibold text-sm;
+  }
+
+  .docs-content td {
+    @apply border border-border px-3 py-2 text-sm;
+  }
+
+  .docs-content hr {
+    @apply border-border my-8;
+  }
+
+  .docs-content img {
+    @apply rounded-lg my-5 max-w-full;
+  }
+}
